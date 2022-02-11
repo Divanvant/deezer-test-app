@@ -1,8 +1,16 @@
 import React from 'react'
 
-const TrackCard = ({ id, title, artist, duration, album, albumArtPath }) =>
+const TrackCard = ({
+  id,
+  title,
+  artist,
+  artistId,
+  duration,
+  album,
+  albumArtPath,
+}) =>
   title !== undefined && (
-    <div className="track" key={id}>
+    <a href={`/artist/${artistId}`} className="track" key={id}>
       <img src={albumArtPath} alt={title} />
       <div className="track-details">
         <div className="title-container">
@@ -12,7 +20,7 @@ const TrackCard = ({ id, title, artist, duration, album, albumArtPath }) =>
         <h4>{artist}</h4>
         <p className="album-name">{album}</p>
       </div>
-    </div>
+    </a>
   )
 
 export { TrackCard }
